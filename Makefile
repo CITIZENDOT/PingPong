@@ -32,7 +32,7 @@ WARNINGS = -Wall -Wpedantic -Wextra
 LDFLAGS =
 
 # Libraries to link
-LDLIBS = -lncursesw
+LDLIBS =
 
 # Target OS detection
 ifeq ($(OS),Windows_NT) # OS is a preexisting environment variable on Windows
@@ -61,7 +61,7 @@ ifeq ($(OS),windows)
 	# Windows 32- and 64-bit common settings
 	INCLUDES +=
 	LDFLAGS +=
-	LDLIBS +=
+	LDLIBS += -lpdcurses
 
 	ifeq ($(win32),1)
 		# Windows 32-bit settings
@@ -83,7 +83,7 @@ else ifeq ($(OS),linux)
 	# Linux-specific settings
 	INCLUDES +=
 	LDFLAGS +=
-	LDLIBS +=
+	LDLIBS += -lncursesw
 endif
 
 ################################################################################

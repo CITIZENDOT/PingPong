@@ -1,5 +1,7 @@
 #include "GameManager.h"
 
+#include <time.h>
+
 bool GameManager::in(int low, int value, int high) {
     return (low <= value) && (value <= high);
 }
@@ -21,10 +23,19 @@ GameManager::GameManager(int w, int h) {
         PLAYER_B_SYMBOL = NEW_PLAYER_B_SYMBOL;
         FENCE = NEW_FENCE;
     } else {
-        BALL_SYMBOL = OLD_BALL_SYMBOL;
-        PLAYER_A_SYMBOL = OLD_PLAYER_A_SYMBOL;
-        PLAYER_B_SYMBOL = OLD_PLAYER_B_SYMBOL;
-        FENCE = OLD_FENCE;
+        printw("\nIs this character appearing as Block character? [Y/n]:  %s  ", OLD_PLAYER_A_SYMBOL.data());
+        input = getch();
+        if (input == 'Y' || input == 'y') {
+            BALL_SYMBOL = OLD_BALL_SYMBOL;
+            PLAYER_A_SYMBOL = OLD_PLAYER_A_SYMBOL;
+            PLAYER_B_SYMBOL = OLD_PLAYER_B_SYMBOL;
+            FENCE = OLD_FENCE;
+        } else {
+            BALL_SYMBOL = FALLBACK_BALL_SYMBOL;
+            PLAYER_A_SYMBOL = FALLBACK_PLAYER_A_SYMBOL;
+            PLAYER_B_SYMBOL = FALLBACK_PLAYER_B_SYMBOL;
+            FENCE = FALLBACK_FENCE;
+        }
     }
     EMPTY = " ";
 }

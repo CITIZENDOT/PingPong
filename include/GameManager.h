@@ -21,6 +21,8 @@ private:
                       NEW_PLAYER_B_SYMBOL = "🔰", NEW_FENCE = "⚔";
     const std::string OLD_BALL_SYMBOL = "O", OLD_PLAYER_A_SYMBOL = "█",
                       OLD_PLAYER_B_SYMBOL = "█", OLD_FENCE = "▓";
+    const std::string FALLBACK_BALL_SYMBOL = "O", FALLBACK_PLAYER_A_SYMBOL = "I",
+                      FALLBACK_PLAYER_B_SYMBOL = "I", FALLBACK_FENCE = "X";
     const int PLAYER_HEIGHT = 4;
 
     bool in(int low, int value, int high);

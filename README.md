@@ -10,6 +10,11 @@ PingPong game built in C++. This game demonstrates several OOP concepts. Some of
 
 Ncurses library is used for console operations.
 
+## Known Issues
+
+- Windows doesn't seem to work well with Emojis.
+- Linux is preferred, for best User experience.
+
 ## Demo
 
 https://user-images.githubusercontent.com/52322531/127457485-e0e2adb1-a2ed-4ae6-a5ae-6a0b27f6f71e.mp4
@@ -22,4 +27,3 @@ This project is inspired by [this](https://youtube.com/playlist?list=PLrjEQvEart
 - Emojis & Better looking UI.
 - Proper Classes which inherit from each other so, less repeated code.
 - Last but not least, CROSS PLATFORM!
-

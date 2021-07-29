@@ -34,3 +34,4 @@
 # Development
 .vscode
 bin/*/debug
+build/

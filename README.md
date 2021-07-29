@@ -10,6 +10,10 @@ PingPong game built in C++. This game demonstrates several OOP concepts. Some of
 
 Ncurses library is used for console operations.
 
+## Download
+
+Choose your OS and Download the game [here](https://github.com/CITIZENDOT/PingPong/releases/tag/1.0.0).
+
 ## Known Issues
 
 - Windows doesn't seem to work well with Emojis.

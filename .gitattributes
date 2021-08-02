@@ -1,0 +1,2 @@
+# Don't make pdcurses files count in the total language stats
+PDCurses-3.9-Windows/** linguist-vendored

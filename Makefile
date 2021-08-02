@@ -58,10 +58,13 @@ ifeq ($(OS),windows)
 		LDFLAGS += -mwindows
 	endif
 
+	# Link with our PDCurses build
+	PDCURSES_DIR = PDCurses-3.9-Windows
+
 	# Windows 32- and 64-bit common settings
-	INCLUDES +=
+	INCLUDES += -I$(PDCURSES_DIR)/include
 	LDFLAGS +=
-	LDLIBS += -lpdcurses
+	LDLIBS += -L$(PDCURSES_DIR) -lpdcurses_windows
 
 	ifeq ($(win32),1)
 		# Windows 32-bit settings

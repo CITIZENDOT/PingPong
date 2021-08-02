@@ -21,7 +21,6 @@ Choose your OS and Download the game [here](https://github.com/CITIZENDOT/PingPo
 
 ## Known Issues
 
-- Windows doesn't seem to work well with Emojis.
 - Linux is preferred, for best User experience.
 
 ## Demo

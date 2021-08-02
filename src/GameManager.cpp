@@ -6,6 +6,14 @@ bool GameManager::in(int low, int value, int high) {
     return (low <= value) && (value <= high);
 }
 
+void GameManager::printEmoji(const std::wstring& str) {
+#ifdef _WIN32
+    addrawch(str[0]);
+#else
+    addwstr(str.data());
+#endif
+}
+
 GameManager::GameManager(int w, int h) {
     width = w;
     height = h;
@@ -15,7 +23,8 @@ GameManager::GameManager(int w, int h) {
     ball = Ball(w / 2, h / 2);
     playerA = Paddle(1, h / 2 + 1);
     playerB = Paddle(w - 2, h / 2 + 1);
-    printw("Is this character appearing as Football emoji? [Y/n]:  %s  ", NEW_BALL_SYMBOL.data());
+    printw("Is this character appearing as Football emoji? [Y/n]:  ");
+    printEmoji(NEW_BALL_SYMBOL);
     int input = getch();
     if (input == 'Y' || input == 'y') {
         BALL_SYMBOL = NEW_BALL_SYMBOL;
@@ -23,7 +32,8 @@ GameManager::GameManager(int w, int h) {
         PLAYER_B_SYMBOL = NEW_PLAYER_B_SYMBOL;
         FENCE = NEW_FENCE;
     } else {
-        printw("\nIs this character appearing as Block character? [Y/n]:  %s  ", OLD_PLAYER_A_SYMBOL.data());
+        printw("\nIs this character appearing as Block character? [Y/n]:  ");
+        printEmoji(OLD_PLAYER_A_SYMBOL);
         input = getch();
         if (input == 'Y' || input == 'y') {
             BALL_SYMBOL = OLD_BALL_SYMBOL;
@@ -37,7 +47,6 @@ GameManager::GameManager(int w, int h) {
             FENCE = FALLBACK_FENCE;
         }
     }
-    EMPTY = " ";
 }
 
 void GameManager::scoreUp(Paddle &player) {
@@ -53,7 +62,7 @@ void GameManager::scoreUp(Paddle &player) {
 void GameManager::draw() {
     clear();
     for (int i = 0; i < width + 2; i++)
-        printw(FENCE.data());
+        printEmoji(FENCE);
     printw("\n");
 
     for (int i = 0; i < height; i++) {
@@ -63,31 +72,31 @@ void GameManager::draw() {
             int playerBX = playerB.getX(), playerBY = playerB.getY();
 
             if (j == 0)
-                printw(FENCE.data());
+                printEmoji(FENCE);
 
             if (ballX == j && ballY == i) {
-                printw(BALL_SYMBOL.data());
+                printEmoji(BALL_SYMBOL);
                 if (BALL_SYMBOL == NEW_BALL_SYMBOL)
                     j += 1;
             } else if (playerAX == j && in(playerAY, i, playerAY + PLAYER_HEIGHT - 1)) {
-                printw(PLAYER_A_SYMBOL.data());
+                printEmoji(PLAYER_A_SYMBOL);
                 if (PLAYER_A_SYMBOL == NEW_PLAYER_A_SYMBOL)
                     j += 1;
             } else if (playerBX == j && in(playerBY, i, playerBY + PLAYER_HEIGHT - 1)) {
-                printw(PLAYER_B_SYMBOL.data());
+                printEmoji(PLAYER_B_SYMBOL);
                 if (PLAYER_B_SYMBOL == NEW_PLAYER_B_SYMBOL)
                     j += 1;
             } else
-                printw(EMPTY.data());
+                printEmoji(EMPTY);
 
             if (j == width - 1)
-                printw(FENCE.data());
+                printEmoji(FENCE);
         }
         printw("\n");
     }
 
     for (int i = 0; i < width + 2; i++)
-        printw(FENCE.data());
+        printEmoji(FENCE);
     printw("\n");
     printw("ScoreA: %d\n", scoreA);
     printw("ScoreB: %d\n", scoreB);

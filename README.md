@@ -1,5 +1,7 @@
 # PingPong
 
+_Thanks to [**@AidanSun05**](https://github.com/AidanSun05) for resolving issues with Windows terminal. Now, This project is truly cross platform!_
+
 PingPong game built in C++. This game demonstrates several OOP concepts. Some of them are below.
 
 - Inheritance
@@ -10,6 +12,10 @@ PingPong game built in C++. This game demonstrates several OOP concepts. Some of
 
 Ncurses library is used for console operations.
 
+### Installation & Change Log
+
+Refer [CHANGE_LOG](CHANGE_LOG.md). It also contains some additional details.
+
 ## Play
 
 - Press `w` and `s` for left player movement. Up and Down respectively.
@@ -18,10 +24,6 @@ Ncurses library is used for console operations.
 ## Download
 
 Choose your OS and Download the game [here](https://github.com/CITIZENDOT/PingPong/releases/tag/1.0.0).
-
-## Known Issues
-
-- Linux is preferred, for best User experience.
 
 ## Demo
 

@@ -1,4 +1,5 @@
-#include "Ball.h"
+import Balls;
+
 
 Ball::Ball() : GameObject(0, 0, "Ball") { direction = STOP; }
 

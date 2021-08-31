@@ -11,9 +11,7 @@ void GameManager::printEmoji(const std::wstring& str) {
 #ifdef _WIN32
     addrawch(str[0]);
 #else
-    char dst[11];
-    wcstombs(dst, str.data(), sizeof dst);
-    addstr(dst);
+    addstr(str.data());
 #endif
 }
 

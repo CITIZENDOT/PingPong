@@ -25,7 +25,7 @@ CPPFLAGS = $(INCLUDES) -MMD -MP
 
 # C++ compiler settings
 CXX = g++
-CXXFLAGS = -std=c++2a -static
+CXXFLAGS = -std=c++17 -static
 WARNINGS = -Wall -Wpedantic -Wextra
 
 # Linker flags
@@ -84,7 +84,7 @@ else ifeq ($(OS),macos)
 	LDLIBS +=
 else ifeq ($(OS),linux)
 	# Linux-specific settings
-	INCLUDES += -I/home/raoui/CODE/PingPong-main/PDCurses-3.9-Windows/include
+	INCLUDES +=
 	LDFLAGS +=
 	LDLIBS += -lncursesw
 endif
